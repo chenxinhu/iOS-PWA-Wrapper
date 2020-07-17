@@ -14,7 +14,7 @@ let webAppUrl = URL(string: "https://cyberpunk.city")
 let allowedOrigin = "cyberpunk.city"
 let menuButtonTitle = NSLocalizedString("menu", comment: "")
 let menuButtonJavascript = """
-    $('.button-collapse').sideNav('show');
+    document.getElementById("toggle-hamburger-menu").click();
 """
 let useUserAgentPostfix = true
 let userAgentPostfix = "iOSApp"
@@ -37,7 +37,8 @@ let alternateRightButtonJavascript = """
 
 // Colors & Styles
 let useLightStatusBarStyle = true
-let navigationBarColor = getColorFromHex(hex: 0xF44336, alpha: 1.0)
+//let navigationBarColor = getColorFromHex(hex: 0xF44336, alpha: 1.0)
+let navigationBarColor = getColorFromHex(hex: 0x000000, alpha: 1.0)
 let navigationTitleColor = getColorFromHex(hex: 0xFFFFFF, alpha: 1.0)
 let navigationButtonColor = navigationTitleColor
 let progressBarColor = getColorFromHex(hex: 0x4CAF50, alpha: 1.0)
