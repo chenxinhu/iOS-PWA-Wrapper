@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ios-pwa-wrapper
+//  cyberpunk-city
 //
 //  Created by Martin Kainzbauer on 25/10/2017.
 //  Copyright © 2017 Martin Kainzbauer. All rights reserved.
@@ -174,7 +174,7 @@ class ViewController: UIViewController {
             self.updateRightButtonTitle(invert: true)
         }
         /// listen for device rotation
-        NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main, using: deviceRotationCallback)
+        NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: .main, using: deviceRotationCallback)
 
         /*
         // @DEBUG: test offline view
@@ -200,7 +200,7 @@ class ViewController: UIViewController {
     deinit {
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.isLoading))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
-        NotificationCenter.default.removeObserver(self, name: .UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     // Helper method to determine wide screen width
@@ -297,4 +297,9 @@ extension ViewController: WKUIDelegate {
             }
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

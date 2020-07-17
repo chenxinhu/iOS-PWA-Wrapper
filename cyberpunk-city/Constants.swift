@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  ios-pwa-wrapper
+//  cyberpunk-city
 //
 //  Created by Martin Kainzbauer on 29/10/2017.
 //  Copyright © 2017 Martin Kainzbauer. All rights reserved.

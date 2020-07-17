@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ios-pwa-wrapper
+//  cyberpunk-city
 //
 //  Created by Martin Kainzbauer on 25/10/2017.
 //  Copyright © 2017 Martin Kainzbauer. All rights reserved.
@@ -15,15 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // Change Navigation style
         UINavigationBar.appearance().barTintColor = navigationBarColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationTitleColor]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationTitleColor]
         UIBarButtonItem.appearance().tintColor = navigationButtonColor
         if #available(iOS 11.0, *) {
-            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationTitleColor]
+            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationTitleColor]
         }
 
         return true
