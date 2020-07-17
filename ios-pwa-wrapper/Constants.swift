@@ -9,9 +9,9 @@
 import UIKit
 
 // Basic App-/WebView-configuration
-let appTitle = "iOS PWA Wrapper"
-let webAppUrl = URL(string: "https://www.leasingrechnen.at")
-let allowedOrigin = "leasingrechnen.at"
+let appTitle = "Cyberpunk City"
+let webAppUrl = URL(string: "https://cyberpunk.city")
+let allowedOrigin = "cyberpunk.city"
 let menuButtonTitle = NSLocalizedString("menu", comment: "")
 let menuButtonJavascript = """
     $('.button-collapse').sideNav('show');
