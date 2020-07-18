@@ -264,6 +264,7 @@ extension ViewController: WKNavigationDelegate {
         offlineView.isHidden = false
         webViewContainer.isHidden = true
     }
+    
 }
 
 // WebView additional handlers
@@ -278,8 +279,14 @@ extension ViewController: WKUIDelegate {
     // restrict navigation to target host, open external links in 3rd party apps
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let requestUrl = navigationAction.request.url {
+
             if let requestHost = requestUrl.host {
-                if (requestHost.range(of: allowedOrigin) != nil ) {
+                if (requestHost.range(of: allowedOrigin) != nil ||
+                    requestHost.range(of: "google.com") != nil ||
+                    requestHost.range(of: "twitter.com") != nil ||
+                    requestHost.range(of: "github.com") != nil ||
+                    requestHost.range(of: "facebook.com") != nil ||
+                    requestHost.range(of: "discord.com") != nil){
                     decisionHandler(.allow)
                 } else {
                     decisionHandler(.cancel)
